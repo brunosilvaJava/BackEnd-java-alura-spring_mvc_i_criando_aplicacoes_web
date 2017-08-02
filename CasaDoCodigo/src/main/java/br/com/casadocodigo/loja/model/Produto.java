@@ -1,5 +1,6 @@
 package br.com.casadocodigo.loja.model;
 
+import java.util.Calendar;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -9,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name="produto")
@@ -25,8 +28,13 @@ public class Produto {
 	
 	private Integer paginas;
 	
+	@DateTimeFormat
+	private Calendar dataLancamento;
+	
 	@ElementCollection
 	private List<Preco> precos;
+	
+	private String sumarioPath;
 
 	@Override
     public String toString() {
@@ -65,12 +73,28 @@ public class Produto {
 		this.paginas = paginas;
 	}
 
+	public Calendar getDataLancamento() {
+		return dataLancamento;
+	}
+
+	public void setDataLancamento(Calendar dataLancamento) {
+		this.dataLancamento = dataLancamento;
+	}
+
 	public List<Preco> getPrecos() {
 		return precos;
 	}
 
 	public void setPrecos(List<Preco> precos) {
 		this.precos = precos;
+	}
+
+	public String getSumarioPath() {
+		return sumarioPath;
+	}
+
+	public void setSumarioPath(String sumarioPath) {
+		this.sumarioPath = sumarioPath;
 	}
 	
 }
