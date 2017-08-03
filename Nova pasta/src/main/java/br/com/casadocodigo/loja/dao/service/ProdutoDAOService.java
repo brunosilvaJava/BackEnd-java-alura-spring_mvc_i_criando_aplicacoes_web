@@ -8,7 +8,7 @@ import br.com.casadocodigo.loja.model.Produto;
 public interface ProdutoDAOService {
 
 	void gravar(Produto produto);
-	List<Produto> listar(); 
+	List<Produto> listar();
 	public Produto consultarProduto(Integer idProduto);	
 	
 }
