@@ -28,7 +28,9 @@ public class ProdutoDAOImpl implements ProdutoDAOService{
 	@Override
 	public List<Produto> listar(){
 		
-	    return entityManager.createQuery("select p from Produto p").getResultList();
+		List<Produto> listaProdutos = entityManager.createQuery("select p from Produto p").getResultList();
+		
+	    return listaProdutos;
 	    
 	}
 	
